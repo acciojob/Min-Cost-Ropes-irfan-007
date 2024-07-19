@@ -2,15 +2,15 @@ function mincost(arr)
 { 
 //write your code here
 // return the min cost
-	arr.sort((a,b)=>(a-b));
-	console.log(arr);
-	var ans=0;
-	var tem=arr[0];
-	for(let i=1;i<arr.length;i++){
-		tem+=arr[i];
-		ans+=tem;
+    var sum=0;
+	while(arr.length>1){
+	    arr.sort((a,b)=>(b-a));
+	    var tem=arr.pop()+arr.pop();
+	    arr.push(tem);
+	    sum+=tem;
 	}
-  return ans;
+
+  return sum;
 }
 
 module.exports=mincost;
